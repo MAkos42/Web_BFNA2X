@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Regisztráció</title>
+    <link rel="stylesheet" href="design.css" />
+    <style>
+        .name {
+            width: 120px;
+            margin-right: 12px;
+        }
+        textarea {
+            width: 98%;
+            height: 80px;
+            margin: 4px;
+            resize: none;
+        }
+    </style>
+    <script>
+        function validateForm() {
+            let phone = $("#phone").value;
+            alert("boop");
+            const regex = /^(([+]36)|(0036)|(06))[237]0[\d]{7}$/;
+            if (!phone.match(regex)) {
+                var div = document.createElement("div");
+                div.className = "warning";
+                div.textContent = "Hibás telefonszám formátum!";
+                document.forms["form"].appendChild(div);
+                return false;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <nav class="navbar">
+        <span><a href="index.html">Főoldal</a></span>
+        <span><a href="benefits.html">Oktatás tartalma</a></span>
+        <span><a href="animation.html">Bemutató</a></span>
+        <span><a href="register.html">Regisztrálás</a></span>
+    </nav>
+    <div class="main">
+        <div class="ad"></div>
+        <div class="content">
+            <h2></h2>
+            <form name="form" onsubmit="return validateForm()" method="post">
+                <h2>Jelentkezés:</h2>
+                <div id="name">
+                    <label for="lastname">Vezetéknév:</label>
+                    <input id="lastname" name="lastname" class="name" type="text" />
+                    <label for="firstname">Keresztnév:</label>
+                    <input id="firstname" name="firstname" class="name" type="text" />
+                </div>
+                <div id="age">
+                    <label for="DoB">Születési dátum:</label>
+                    <input id="DoB" name="DoB" type="date" />
+                </div>
+                <div id="contactinfo">
+                    <label for="email">Email:</label>
+                    <input id="email" name="email" type="email" style="width: 200px" />
+                    <label for="phone">Telefonszám:</label>
+                    <input id="phone" name="phone" type="tel" placeholder="+36201234567" size="12" />
+                </div>
+                <div id="chosenday">
+                    <label for="day">Oktatás napja:</label><br />
+                    <input type="radio" id="tuesday" name="day" value="tuesday" /> Kedd: 18:00-19:50<br />
+                    <input type="radio" id="thursday" name="day" value="thursday" /> Csütörtök: 18:00-19:50<br />
+                    <input type="radio" id="saturday" name="day" value="saturday" /> Szombat: 10:00-11:50<br />
+                    <br />
+                </div>
+                <div>
+                    Megjegyzés:<br />
+                    <textarea></textarea>
+                </div>
+                <input type="checkbox" id="ToS" name="ToS" /><label for="ToS"
+                    >Az Általános Szerződési Feltételeket elfogadtam.</label
+                ><br />
+                <input type="submit" id="submit" name="submit" value="Jelentkezés" />
+            </form>
+        </div>
+        <div class="ad"></div>
+    </div>
+</body>
