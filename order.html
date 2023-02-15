@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Nemtudommi Pizzéria</title>
+  <link rel="stylesheet" href="css/design.css" />
+  <script src="js/addorderelement.js"></script>
+</head>
+
+<body>
+  <nav class="navbar">
+    <span class="logo">Nemtudommi Pizzéria</span>
+    <span class="navbutton"><a href="index.html">Főoldal</a></span>
+    <span class="navbutton"><a class="nav-selected" href="order.html">Rendelés</a></span>
+    <span class="navbutton"><a href="contact.html">Elérhetőség</a></span>
+  </nav>
+  </nav>
+  <div class="main">
+    <div class="pad"></div>
+    <div class="order-listing">
+      <table id="order">
+        <tr>
+          <th>
+            <h2>Pizza</h2>
+          </th>
+          <th>
+            <h2>Price</h2>
+          </th>
+          <th></th>
+        </tr>
+        <tr>
+          <td>
+            <h3>Margherita</h3>
+            (pizza sauce, mozzarella, fresh basil)
+          </td>
+          <td>$9.99</td>
+          <td><button class="addpizza" onclick="addOrderItem('margherita', 9.99)">+</button></td>
+        </tr>
+        <tr>
+          <td>
+            <h3>Pepperoni</h3>
+            (pizza sauce, mozzarella, pepperoni)
+          </td>
+          <td>$11.99</td>
+          <td><button class="addpizza" onclick="addOrderItem('pepperoni', 11.99)">+</button></td>
+        </tr>
+        <tr>
+          <td>
+            <h3>Hawaiian</h3>
+            (pizza sauce, mozzarella, ham, pineapple)
+          </td>
+          <td>$12.99</td>
+          <td><button class="addpizza" onclick="addOrderItem('hawaiian', 12.99)">+</button></td>
+        </tr>
+        <tr>
+          <td>
+            <h3>Meat Lover's</h3>
+            (pizza sauce, mozzarella, pepperoni, sausage, bacon, ground beef)
+          </td>
+          <td>$14.99</td>
+          <td><button class="addpizza" onclick="addOrderItem('meatlovers', 14.99)">+</button></td>
+        </tr>
+        <tr>
+          <td>
+            <h3>Vegetarian</h3>
+            (pizza sauce, mozzarella, mushrooms, onions, green peppers, black olives)
+          </td>
+          <td>$13.99</td>
+          <td><button class="addpizza" onclick="addOrderItem('vegetarian', 13.99)">+</button></td>
+        </tr>
+        <tr>
+          <td>
+            <h3>BBQ Chicken</h3>
+            (BBQ sauce, mozzarella, grilled chicken, red onions)
+          </td>
+          <td>$14.99</td>
+          <td><button class="addpizza" onclick="addOrderItem('bbqchicken', 14.99)">+</button></td>
+        </tr>
+        <tr>
+          <td>
+            <h3>Buffalo Chicken</h3>
+            (buffalo sauce, mozzarella, grilled chicken, red onions)
+          </td>
+          <td>$15.99</td>
+          <td><button class="addpizza" onclick="addOrderItem('buffalochicken', 15.99)">+</button></td>
+        </tr>
+        <tr>
+          <td>
+            <h3>White Pizza</h3>
+            (olive oil, garlic, ricotta, mozzarella, parmesan cheese)
+          </td>
+          <td>$12.99</td>
+          <td><button class="addpizza" onclick="addOrderItem('whitepizza', 12.99)">+</button></td>
+        </tr>
+        <tr>
+          <td>
+            <h3>Meatball</h3>
+            (pizza sauce, mozzarella, meatballs, parmesan cheese)
+          </td>
+          <td>$13.99</td>
+          <td><button class="addpizza" onclick="addOrderItem('meatball', 13.99)">+</button></td>
+        </tr>
+        <tr>
+          <td>
+            <h3>Supreme</h3>
+            (pizza sauce, mozzarella, pepperoni, sausage, onions, green peppers, mushrooms, black olives)
+          </td>
+          <td>$15.99</td>
+          <td><button class="addpizza" onclick="addOrderItem('supreme', 15.99)">+</button></td>
+        </tr>
+      </table>
+    </div>
+    <div class="current-order">
+      <h3>Current order:</h3>
+      <form name="orderform" action="takeout.html" method="post">
+        <input id="order-price" type="text" hidden>
+        <input id="order-button" type="submit" value="Order" disabled>
+      </form>
+      <textarea id="current-order" cols="20" rows="20" readonly></textarea>
+      <label id="price-display">Total: $0</label>
+    </div>
+    <div class="pad"></div>
+  </div>
+</body>

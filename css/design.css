@@ -1,0 +1,128 @@
+body {
+    color: black;
+    background: beige;
+    font-size: 12pt;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 0;
+}
+
+h3 {
+    margin: 0px;
+}
+
+p {
+    text-align: justify;
+}
+input[type="text"] {
+    margin: 4px 2px;
+    width: 120px;
+}
+
+input.long {
+    width: 200px;
+}
+
+.navbar {
+    height: 32px;
+    background-color: maroon;
+    color: aqua;
+    font-size: 14pt;
+    display: block;
+    align-items: center;
+    white-space: normal;
+}
+
+.logo {
+    padding: 5px 10px;
+    font-weight: bold;
+}
+
+.navbutton {
+    height: 27px;
+    padding: 5px 10px 0;
+    text-align: right;
+    float: right;
+    border: 1px solid firebrick;
+    border-width: 0 1px;
+}
+
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+.main {
+    display: flex;
+}
+
+.content {
+    background: white;
+    width: 800px;
+    min-width: 800px;
+    margin: 8px;
+    padding: 10px;
+    text-align: justify;
+}
+
+.pad {
+    width: 100000px;
+    min-width: 0px;
+    margin: 8px;
+}
+
+.image-container {
+    float: right;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    width: 400px;
+    height: 400px;
+}
+
+.order-listing {
+    width: 600px;
+    min-width: 600px;
+}
+
+.current-order {
+    width: 200px;
+    min-width: 200px;
+    background: white;
+    padding: 4px;
+    text-align: center;
+}
+
+#current-order {
+    resize: none;
+    height: auto;
+    width: 100%;
+    border: none;
+    box-sizing: content-box;
+}
+
+#order {
+    border: black solid 1px;
+    background: black;
+}
+
+th,
+td {
+    background: white;
+    padding: 10px;
+}
+
+.formgroup {
+    display: flex;
+    border: 3px solid #000033;
+    border-radius: 5px;
+    padding: 4px;
+}
+
+.warning {
+    background-color: #aa111133;
+    border: 1px solid red;
+    padding: 10px;
+    border-radius: 2;
+}

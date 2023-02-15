@@ -1,0 +1,79 @@
+<head>
+    <meta charset="UTF-8" />
+    <title>Nemtudommi Pizzéria</title>
+    <link rel="stylesheet" href="css/design.css" />
+</head>
+
+<body>
+    <nav class="navbar">
+        <span class="logo">Nemtudommi Pizzéria</span>
+        <span class="navbutton"><a href="index.html">Főoldal</a></span>
+        <span class="navbutton"><a class="nav-selected" href="order.html">Rendelés</a></span>
+        <span class="navbutton"><a href="contact.html">Elérhetőség</a></span>
+    </nav>
+    </nav>
+    <div class="main">
+        <div class="pad"></div>
+        <div class="content">
+            <h2>Takeout information</h2>
+            <ol>
+                <form name="address-form">
+                    <li>
+                        <h3>Name</h3>
+                    </li>
+                    <div id="name" class="formgroup">
+                        <div>
+                            <label for="firstname">First Name:*</label><br>
+                            <input name="firstname" class="name" type="text" required />
+                        </div>
+                        <div>
+                            <label for="lastname">Last Name:*</label><br>
+                            <input name="lastname" class="name" type="text" required />
+                        </div>
+                    </div>
+                    <li>
+                        <h3>Contact information</h3>
+                    </li>
+                    <div id="contactinfo" class="formgroup">
+                        <div>
+                            <label for="email">Email:*</label><br>
+                            <input name="email" class="long" type="email" placeholder="example@email.com" required />
+                        </div>
+                        <div>
+                            <label for="phone">Phone number:*</label><br>
+                            <input name="phone" class="phone" type="tel" placeholder="+123(123)456-7890"
+                                pattern="^\+\d{2,3}[( ]?\d{2,3}[) ]?\d{3}[- ]?\d{4}$" required />
+                        </div>
+                    </div>
+                    <div id="address" class="formgroup">
+                        <label for="postalcode">Postal code:</label>
+                        <input name="postalcode" type="number" required />
+                        <label for="city">City:</label>
+                        <input name="city" type="text" required />
+                        <br />
+                        <label for="address">Address:</label>
+                        <input name="address" class="long" type="text" required />
+                    </div>
+                    <li>
+                        <h3>Payment method</h3>
+                    </li>
+                    <div id="payment" class="formgroup">
+
+                    </div>
+                    <li>
+                        <h3>Miscellaneous</h3>
+                    </li>
+                    <div id="misc" class="formgroup">
+
+                    </div>
+                    <div>
+                        <input name="ToC" type="checkbox" required>I have accepted the Terms and Conditions for placing
+                        this order.<br>
+                        <input type="submit" value="Place Order">
+                    </div>
+                </form>
+            </ol>
+        </div>
+        <div class="pad"></div>
+    </div>
+</body>
