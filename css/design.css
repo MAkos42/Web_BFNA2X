@@ -16,13 +16,28 @@ h3 {
 p {
     text-align: justify;
 }
-input[type="text"] {
+
+input {
     margin: 4px 2px;
+}
+
+input[type="text"],
+input[type="number"] {
     width: 120px;
+}
+
+input.short {
+    width: 40px;
 }
 
 input.long {
     width: 200px;
+}
+
+input[type="submit"] {
+    background-color: aqua;
+    border-radius: 3px;
+    border-color: dodgerblue;
 }
 
 .navbar {
@@ -36,7 +51,7 @@ input.long {
 }
 
 .logo {
-    padding: 5px 10px;
+    margin: 10px;
     font-weight: bold;
 }
 
@@ -81,6 +96,16 @@ a {
     height: 400px;
 }
 
+.moving-pizza {
+    width: 400px;
+    height: 200px;
+    vertical-align: middle;
+}
+
+.pizza {
+    margin-top: 60px;
+}
+
 .order-listing {
     width: 600px;
     min-width: 600px;
@@ -94,12 +119,14 @@ a {
     text-align: center;
 }
 
-#current-order {
+textarea {
     resize: none;
-    height: auto;
     width: 100%;
+    height: auto;
+}
+
+#current-order {
     border: none;
-    box-sizing: content-box;
 }
 
 #order {
@@ -119,10 +146,18 @@ td {
     border-radius: 5px;
     padding: 4px;
 }
+.noflex {
+    display: block;
+}
 
 .warning {
     background-color: #aa111133;
     border: 1px solid red;
     padding: 10px;
     border-radius: 2;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    display: none;
 }

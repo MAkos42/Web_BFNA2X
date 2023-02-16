@@ -17,7 +17,7 @@
         <div class="content">
             <h2>Takeout information</h2>
             <ol>
-                <form name="address-form">
+                <form name="address-form" action="index.html" method="post">
                     <li>
                         <h3>Name</h3>
                     </li>
@@ -41,34 +41,62 @@
                         </div>
                         <div>
                             <label for="phone">Phone number:*</label><br>
-                            <input name="phone" class="phone" type="tel" placeholder="+123(123)456-7890"
-                                pattern="^\+\d{2,3}[( ]?\d{2,3}[) ]?\d{3}[- ]?\d{4}$" required />
+                            <input name="phone" class="phone" type="tel" placeholder="+36(12)345-6789"
+                                pattern="^\+36[( ]?\d{2}[) ]?\d{3}[- ]?\d{4}$" required
+                                oninvalid="this.setCustomValidity('Phone number is invalid!\nAccepted formats:\n+36(12)345-6789\n+36123456789\n+36 12 345 6789')"
+                                oninput="this.setCustomValidity('')" />
                         </div>
                     </div>
-                    <div id="address" class="formgroup">
-                        <label for="postalcode">Postal code:</label>
-                        <input name="postalcode" type="number" required />
-                        <label for="city">City:</label>
-                        <input name="city" type="text" required />
-                        <br />
-                        <label for="address">Address:</label>
-                        <input name="address" class="long" type="text" required />
+                    <li>
+                        <h3>Address</h3>
+                    </li>
+                    <div id="address" class="formgroup noflex">
+                        <div>
+                            <label for="postalcode">Postal code:*</label>
+                            <input name="postalcode" class="short" type="number" minlength="4" maxlength="4" required
+                                oninvalid="this.setCustomValidity('Postal Code must be 4 digits long!')"
+                                oninput="this.setCustomValidity('')" />
+                        </div>
+                        <div>
+                            <label for="city">City:*</label>
+                            <input name="city" type="text" required />
+                        </div>
+                        <div>
+                            <label for="address">Address:*</label>
+                            <input name="address" class="long" type="text" required />
+                        </div>
                     </div>
                     <li>
-                        <h3>Payment method</h3>
+                        <h3>Payment method*</h3>
                     </li>
-                    <div id="payment" class="formgroup">
-
+                    <div id="payment-type" class="formgroup noflex">
+                        <div>
+                            <input name="payment-type" type="radio" id="cash" required><label for="cash">Cash (on
+                                pickup)</label>
+                        </div>
+                        <div>
+                            <input name="payment-type" type="radio" id="card"><label for="card">Credit Card (on
+                                pickup)<br></label>
+                        </div>
+                        <div>
+                            <input name="payment-type" type="radio" id="online"><label for="online">Credit Card
+                                (online)<br></label>
+                        </div>
                     </div>
                     <li>
                         <h3>Miscellaneous</h3>
                     </li>
-                    <div id="misc" class="formgroup">
-
+                    <div id="misc" class="formgroup noflex">
+                        Other information:
+                        <div>
+                            <textarea name="misc" rows="3"></textarea>
+                        </div>
+                        <label for="color">Favorite color:</label>
+                        <input name="color" type="color">
                     </div>
                     <div>
                         <input name="ToC" type="checkbox" required>I have accepted the Terms and Conditions for placing
-                        this order.<br>
+                        this order.*<br>
                         <input type="submit" value="Place Order">
                     </div>
                 </form>
