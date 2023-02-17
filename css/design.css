@@ -61,6 +61,7 @@ input[type="submit"] {
 }
 
 .logo {
+    padding: 5px 10px 0;
     float: left;
     font-weight: bold;
 }
