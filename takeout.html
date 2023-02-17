@@ -2,6 +2,10 @@
     <meta charset="UTF-8" />
     <title>Nemtudommi Pizzéria</title>
     <link rel="stylesheet" href="css/design.css" />
+    <script>function setInvalid(input) {
+            input.style.outlineColor = 'red';
+            input.style.borderColor = 'red';
+        }</script>
 </head>
 
 <body>
@@ -24,11 +28,11 @@
                     <div id="name" class="formgroup">
                         <div>
                             <label for="firstname">First Name:*</label><br>
-                            <input name="firstname" class="name" type="text" required />
+                            <input name="firstname" class="name" type="text" oninvalid="setInvalid(this);" required />
                         </div>
                         <div>
                             <label for="lastname">Last Name:*</label><br>
-                            <input name="lastname" class="name" type="text" required />
+                            <input name="lastname" class="name" type="text" oninvalid="setInvalid(this);" required />
                         </div>
                     </div>
                     <li>
@@ -37,14 +41,15 @@
                     <div id="contactinfo" class="formgroup">
                         <div>
                             <label for="email">Email:*</label><br>
-                            <input name="email" class="long" type="email" placeholder="example@email.com" required />
+                            <input name="email" class="long" type="email" placeholder="example@email.com"
+                                oninvalid="setInvalid(this);" required />
                         </div>
                         <div>
                             <label for="phone">Phone number:*</label><br>
-                            <input name="phone" class="phone" type="tel" placeholder="+36(12)345-6789"
-                                pattern="^\+36[( ]?\d{2}[) ]?\d{3}[- ]?\d{4}$" required
-                                oninvalid="this.setCustomValidity('Phone number is invalid!\nAccepted formats:\n+36(12)345-6789\n+36123456789\n+36 12 345 6789')"
-                                oninput="this.setCustomValidity('')" />
+                            <input name="phone" class="phone" type="text" placeholder="+36(12)345-6789"
+                                pattern="^\+36[( ]?\d{2}[) ]?\d{3}[- ]?\d{4}$"
+                                oninvalid="this.setCustomValidity('Phone number is invalid!\nAccepted formats:\n+36(12)345-6789\n+36123456789\n+36 12 345 6789'); setInvalid(this);"
+                                oninput=" this.setCustomValidity('')" required />
                         </div>
                     </div>
                     <li>
@@ -53,17 +58,17 @@
                     <div id="address" class="formgroup noflex">
                         <div>
                             <label for="postalcode">Postal code:*</label>
-                            <input name="postalcode" class="short" type="number" minlength="4" maxlength="4" required
-                                oninvalid="this.setCustomValidity('Postal Code must be 4 digits long!')"
-                                oninput="this.setCustomValidity('')" />
+                            <input name="postalcode" class="short" type="number" minlength="4" maxlength="4"
+                                oninvalid="this.setCustomValidity('Postal Code must be 4 digits long!'); setInvalid(this);"
+                                oninput=" this.setCustomValidity('')" required />
                         </div>
                         <div>
                             <label for="city">City:*</label>
-                            <input name="city" type="text" required />
+                            <input name="city" type="text" oninvalid="setInvalid(this);" required />
                         </div>
                         <div>
                             <label for="address">Address:*</label>
-                            <input name="address" class="long" type="text" required />
+                            <input name="address" class="long" type="text" oninvalid="setInvalid(this);" required />
                         </div>
                     </div>
                     <li>
@@ -95,7 +100,8 @@
                         <input name="color" type="color">
                     </div>
                     <div>
-                        <input name="ToC" type="checkbox" required>I have accepted the Terms and Conditions for placing
+                        <input name="ToC" type="checkbox" oninvalid="setInvalid(this);" required>I have
+                        accepted the Terms and Conditions for placing
                         this order.*<br>
                         <input type="submit" value="Place Order">
                     </div>
